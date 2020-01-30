@@ -3,17 +3,30 @@
 
 <script>
 	AFRAME.registerComponent('updateHeight', {
-	  		tick: function () {
-		    var el = this.el;
-	    	var rotationTmp = this.rotationTmp = this.rotationTmp || {x: 0, y: 0, z: 0};
-	    	var rotation = el.getAttribute('rotation');
-		    rotationTmp.x = rotation.x + 0.1;
-		    rotationTmp.y = rotation.y + 0.1;
-		    rotationTmp.z = rotation.z + 0.1;
-		    el.setAttribute('rotation', rotationTmp);
-		  }
-		});
+		tick: function () {
+	    var el = this.el;
+	   	var rotationTmp = this.rotationTmp = this.rotationTmp || {x: 0, y: 0, z: 0};
+	   	var rotation = el.getAttribute('rotation');
+	    rotationTmp.x = rotation.x + 0.1;
+	    rotationTmp.y = rotation.y + 0.1;
+	    rotationTmp.z = rotation.z + 0.1;
+	    el.setAttribute('rotation', rotationTmp);
+	  }
+	});
 
+	AFRAME.registerComponent('buildTerrain', {
+		tick: function () {
+	    var el = this.el;
+
+	    for (var i = 0; i < 1; i++) {
+            var boxEl = document.createElement('a-box');
+            boxEl.setAttribute('material', {'color: black'});
+            boxEl.setAttribute('position', {x: 0, y: 0, z: 1);
+            boxEl.setAttribute('scale', {x: 1, y: 1, z: 1});
+            el.appendChild(boxEl);
+          }
+	  }
+	});
 </script>
 
 
