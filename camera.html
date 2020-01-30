@@ -1,24 +1,52 @@
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+
+<script>
+	AFRAME.registerComponent('updateHeight', {
+	  		tick: function () {
+		    var el = this.el;
+	    	var rotationTmp = this.rotationTmp = this.rotationTmp || {x: 0, y: 0, z: 0};
+	    	var rotation = el.getAttribute('rotation');
+		    rotationTmp.x = rotation.x + 0.1;
+		    rotationTmp.y = rotation.y + 0.1;
+		    rotationTmp.z = rotation.z + 0.1;
+		    el.setAttribute('rotation', rotationTmp);
+		  }
+		});
+
+</script>
+
+
 <body style='margin : 0px; overflow: hidden;'>
 	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 		
 <!--<a-marker type="pattern" preset="custom" url="https://leoncollins.github.io/qr-code.png">-->
 		<a-marker type="barcode" value="1">
-			<a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+			<a-plane height="100" width="100" rotation="-90 0 0" material='color: red;'></a-plane>
 		</a-marker>
 
-		<a-marker type="barcode" value="2">
+
+
+
+		<a-marker updateHeight type="barcode" value="2">
 			<a-box position='0 0.5 0' height='5' width='5' material='color: red;'></a-box>
 		</a-marker>
 
-		<a-marker type="barcode" value="3">
+		
+
+		<a-marker updateHeight type="barcode" value="3">
 			<a-box position='0 5 0' height='1' width='1' material='color: green;'></a-box>
 		</a-marker>
 
-		<a-marker type="barcode" value="4">
+
+
+
+		<a-marker updateHeight type="barcode" value="4">
 			<a-box position='0 0.5 0' height='10' width='10' material='color: blue;'></a-box>
 		</a-marker>
+
+
+
 
 		<a-entity camera></a-entity>
 	</a-scene>
