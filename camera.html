@@ -15,13 +15,13 @@
 	});
 
 	AFRAME.registerComponent('buildTerrain', {
-		tick: function () {
+		init: function () {
 	    var el = this.el;
 
 	    for (var i = 0; i < 1; i++) {
             var boxEl = document.createElement('a-box');
             boxEl.setAttribute('material', {'color: black'});
-            boxEl.setAttribute('position', {x: 0, y: 0, z: 1);
+            boxEl.setAttribute('position', {x: 1, y: 1, z: 1});
             boxEl.setAttribute('scale', {x: 1, y: 1, z: 1});
             el.appendChild(boxEl);
           }
@@ -35,7 +35,7 @@
 		
 <!--<a-marker type="pattern" preset="custom" url="https://leoncollins.github.io/qr-code.png">-->
 		<a-marker type="barcode" value="1">
-			<a-plane height="100" width="100" rotation="-90 0 0" material='color: red;'></a-plane>
+			<a-plane buildTerrain height="10" width="10" rotation="-90 0 0" material='color: white;'></a-plane>
 		</a-marker>
 
 
