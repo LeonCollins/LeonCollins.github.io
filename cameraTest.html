@@ -5,7 +5,15 @@
 	AFRAME.registerComponent('ping', {
 
 		init: function() {
-			alert("switch");
+			alert("combine");
+		}
+	});
+
+	AFRAME.registerComponent('updateHeight', {
+		tick: function() {
+
+			alert("is in");
+		    
 		}
 	});
 </script>
@@ -24,13 +32,7 @@
 		    alert("rot updated");
 -->
 <script>
-	AFRAME.registerComponent('updateHeight', {
-		tick: function() {
-
-			alert("is in");
-		    
-		}
-	});
+	
 </script>
 
 <script>
