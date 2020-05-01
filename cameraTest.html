@@ -4,19 +4,23 @@
 <script>
 	var url_string = window.location.href;
 	var url = new URL(url_string);
-	var c = url.searchParams.get("");
+
+	var height = [[url.searchParams.get("one"), url.searchParams.get("two"), url.searchParams.get("three")], [url.searchParams.get("four"), url.searchParams.get("five"), url.searchParams.get("six")], [url.searchParams.get("seven"), url.searchParams.get("eight"), url.searchParams.get("nine")]];
+
 
 	AFRAME.registerComponent('terr', {
 		init: function() {
 			var el = this.el;
 			for (var i = 0; i < 3; i++) {
 				for (var j = 0; j < 3; j++) {
-					var boxEl = document.createElement('a-entity');
-					boxEl.setAttribute('geometry', {primitive: 'box'});
-					boxEl.setAttribute('material', {color: 'black'});
-		            boxEl.setAttribute('scale', {x: 2, y: 2, z: 2});
-		            boxEl.setAttribute('position', {x: i, y: -1, z: j});
-		            el.appendChild(boxEl);
+					for (var k = 0; k < height[i][j]; k++) {
+						var boxEl = document.createElement('a-entity');
+						boxEl.setAttribute('geometry', {primitive: 'box'});
+						boxEl.setAttribute('material', {color: 'black'});
+			            boxEl.setAttribute('scale', {x: 2, y: 2, z: 2});
+			            boxEl.setAttribute('position', {x: i, y: k, z: j});
+			            el.appendChild(boxEl);
+		        	}
 	        	}
 			}
 		}
