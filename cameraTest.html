@@ -21,7 +21,8 @@
 	    var el = this.el;
 
 	    for (var i = 0; i < 2; i++) {
-            var boxEl = document.createElement('a-box');
+            var boxEl = document.createElement('a-entity');
+            boxEl.setAttribute('geometry', {primitive: 'box'});
             boxEl.setAttribute('material', {'color: black'});
             boxEl.setAttribute('position', {x: 2, y: 2, z: 2});
             boxEl.setAttribute('scale', {x: 2, y: 2, z: 2});
