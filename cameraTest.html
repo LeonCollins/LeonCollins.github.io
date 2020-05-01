@@ -5,15 +5,20 @@
 	AFRAME.registerComponent('ping', {
 
 		init: function() {
-			alert("rename");
+			alert("moving");
 		}
 	});
 
 	AFRAME.registerComponent('move', {
 		tick: function() {
 
-			alert("is in");
-		    
+		    var el = this.el;
+		   	var rotationTmp = this.rotationTmp = this.rotationTmp || {0, 0, 0};//x: 0, y: 0, z: 0
+		   	var rotation = el.getAttribute('rotation');
+		    rotationTmp.x = rotation.x + 0.4;
+		    rotationTmp.y = rotation.y + 0.4;
+		    rotationTmp.z = rotation.z + 0.4;
+		    el.setAttribute('rotation', rotationTmp);
 		}
 	});
 </script>
