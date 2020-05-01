@@ -5,7 +5,7 @@
 	AFRAME.registerComponent('ping', {
 
 		init: function() {
-			alert("two");
+			alert("twoV2");
 		}
 	});
 
@@ -13,7 +13,7 @@
 		tick: function() {
 
 		    var el = this.el;
-		    var rotationTmp = this.rotationTmp = this.rotationTmp || {0, 0, 0};//x: 0, y: 0, z: 0
+		    var rotation = el.getAttribute('rotation');
 		}
 	});
 </script>
