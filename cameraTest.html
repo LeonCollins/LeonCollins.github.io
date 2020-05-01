@@ -29,10 +29,11 @@
 </script>
 
 <body style='margin : 0px; overflow: hidden;'>
-	<button>Settings</button>
+	<button onclick="openOverlay()">Settings</button>
 	<div id="overlay">
 		<input type="number" id="height" value="1">
 		<button onclick="setHeight()">Set Height</button>
+		<button onclick="closeOverlay()">Return</button>
 	</div>
 
 	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
