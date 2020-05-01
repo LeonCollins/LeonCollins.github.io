@@ -33,7 +33,9 @@
 </script>
 
 <body style='margin : 0px; overflow: hidden;'>
-	<button id="menu" onclick="openOverlay()">Settings</button>
+	<div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+		<button id="menu" onclick="openOverlay()">Settings</button>
+	</div>
 	<div id="overlay">
 		<input type="number" id="height" value="1">
 		<button onclick="setHeight()">Set Height</button>
