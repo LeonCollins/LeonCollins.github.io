@@ -1,50 +1,52 @@
 <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-<!--
+
 <script>
 	AFRAME.registerComponent('ping', {
 
-		tick: function() {
+		init: function() {
 			alert("functions work");
 		}
 	});
 </script>
--->
+
 <script>
 	AFRAME.registerComponent('updateHeight', {
 		tick: function() {
 			alert("is in");
-	    var el = this.el;
-	    alert("has el");
-	   	var rotationTmp = this.rotationTmp = this.rotationTmp || {0, 0, 0};//x: 0, y: 0, z: 0
-	   	alert("made rot");
-	   	var rotation = el.getAttribute('rotation');
-	   	alert("has rot");
-	    rotationTmp.x = rotation.x + 0.4;
-	    rotationTmp.y = rotation.y + 0.4;
-	    rotationTmp.z = rotation.z + 0.4;
-	    alert("rot changed");
-	    el.setAttribute('rotation', rotationTmp);
-	    alert("rot updated");
-	    
-	  }
+		    var el = this.el;
+		    alert("has el");
+		   	var rotationTmp = this.rotationTmp = this.rotationTmp || {0, 0, 0};//x: 0, y: 0, z: 0
+		   	alert("made rot");
+		   	var rotation = el.getAttribute('rotation');
+		   	alert("has rot");
+		    rotationTmp.x = rotation.x + 0.4;
+		    rotationTmp.y = rotation.y + 0.4;
+		    rotationTmp.z = rotation.z + 0.4;
+		    alert("rot changed");
+		    el.setAttribute('rotation', rotationTmp);
+		    alert("rot updated");
+		}
 	});
 </script>
+
 <script>
 	AFRAME.registerComponent('buildTerrain', {
 		init: function() {
-	    var el = this.el;
-
-	    for (var i = 0; i < 2; i++) {
-            var boxEl = document.createElement('a-entity');
-            boxEl.setAttribute('geometry', {primitive: 'box'});
-            boxEl.setAttribute('material', {'color: black'});
-            boxEl.setAttribute('position', {x: 2, y: 2, z: 2});
-            boxEl.setAttribute('scale', {x: 2, y: 2, z: 2});
-            el.appendChild(boxEl);
-            alert("Adding");
-          }
-	  }
+			alert("in plane");
+		    var el = this.el;
+		    alert("has plane");
+		    for (var i = 0; i < 2; i++) {
+		    	alert("in loop");
+	            var boxEl = document.createElement('a-entity');
+	            boxEl.setAttribute('geometry', {primitive: 'box'});
+	            boxEl.setAttribute('material', {'color: black'});
+	            boxEl.setAttribute('position', {x: 2, y: 2, z: 2});
+	            boxEl.setAttribute('scale', {x: 2, y: 2, z: 2});
+	            el.appendChild(boxEl);
+	            alert("Adding");
+	        }
+	  	}
 	});
 </script>
 
