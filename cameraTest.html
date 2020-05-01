@@ -5,7 +5,7 @@
 	AFRAME.registerComponent('ping', {
 
 		init: function() {
-			alert("mapV2");
+			alert("terr");
 		}
 	});
 
@@ -25,9 +25,19 @@
 		}
 	});
 
-	
+	AFRAME.registerComponent('terr', {
+		init: function() {
+			alert("works");
+		}
+	});
 </script>
 <!--
+	AFRAME.registerComponent('map', {
+		init: function() {
+			alert("in plane");
+		    
+	});
+
 	var el = this.el;
 		    alert("has plane");
 		    for (var i = 0; i < 1; i++) {
@@ -48,7 +58,7 @@
 	<!--	
 <a-marker type="pattern" preset="custom" url="https://leoncollins.github.io/qr-code.png">-->
 		<a-marker type="barcode" value="1">
-			<a-plane map height="10" width="10" rotation="0 0 0" material='color: white;'></a-plane>
+			<a-plane terr height="10" width="10" rotation="0 0 0" material='color: white;'></a-plane>
 		</a-marker>
 
 
