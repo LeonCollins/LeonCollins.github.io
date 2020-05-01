@@ -1,0 +1,11 @@
+input{
+	width: 40px;
+	height: 40px;
+}
+
+#board{
+	width: 180px;
+	height: 180px;
+	border-style: solid;
+	border-color: "red";
+}
