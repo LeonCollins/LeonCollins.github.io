@@ -5,7 +5,7 @@
 	AFRAME.registerComponent('ping', {
 
 		init: function() {
-			alert("three");
+			alert("map");
 		}
 	});
 
@@ -25,31 +25,14 @@
 		}
 	});
 </script>
-<!--
-			var el = this.el;
-		    alert("has el");
-		   	var rotationTmp = this.rotationTmp = this.rotationTmp || {0, 0, 0};//x: 0, y: 0, z: 0
-		   	alert("made rot");
-		   	var rotation = el.getAttribute('rotation');
-		   	alert("has rot");
-		    rotationTmp.x = rotation.x + 0.4;
-		    rotationTmp.y = rotation.y + 0.4;
-		    rotationTmp.z = rotation.z + 0.4;
-		    alert("rot changed");
-		    el.setAttribute('rotation', rotationTmp);
-		    alert("rot updated");
--->
-<script>
-	
-</script>
 
 <script>
-	AFRAME.registerComponent('buildTerrain', {
+	AFRAME.registerComponent('map', {
 		init: function() {
 			alert("in plane");
 		    var el = this.el;
 		    alert("has plane");
-		    for (var i = 0; i < 2; i++) {
+		    for (var i = 0; i < 1; i++) {
 		    	alert("in loop");
 	            var boxEl = document.createElement('a-entity');
 	            boxEl.setAttribute('geometry', {primitive: 'box'});
@@ -68,7 +51,7 @@
 	<!--	
 <a-marker type="pattern" preset="custom" url="https://leoncollins.github.io/qr-code.png">-->
 		<a-marker type="barcode" value="1">
-			<a-plane buildTerrain height="10" width="10" rotation="0 0 0" material='color: white;'></a-plane>
+			<a-plane map height="10" width="10" rotation="0 0 0" material='color: white;'></a-plane>
 		</a-marker>
 
 
