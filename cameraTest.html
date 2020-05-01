@@ -10,9 +10,16 @@
 	});
 
 	AFRAME.registerComponent('move', {
-		tick: function() {
+		init: function () {
+    // Set up the tick throttling.
+    this.tick = AFRAME.utils.throttleTick(this.tick, 500, this);
+  },
 
-		    var el = this.el;
+  /**
+   * Tick function that will be wrapped to be throttled.
+   */
+  tick: function (t, dt) {
+  	var el = this.el;
 		    var rotation = el.getAttribute('rotation');
 		    this.el.object3D.rotation.x = rotation.x + 1;
 		}
