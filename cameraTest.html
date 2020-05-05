@@ -36,25 +36,27 @@
 	<div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
 		<button id="menu" onclick="openOverlay()">Settings</button>
 	</div>
-	<div id="overlay">
-		<input type="number" id="height">
-		<button onclick="setHeight()">Set Height</button>
-		<br> 
-		<select id="colour" name="colour">
-			<option value="red">Red</option>
-			<option value="blue">Blue</option>
-			<option value="green">Green</option>
-		</select>
-		<button onclick="setColour()">Set Colour</button>
-		<br>
-		<select id="shape" name="shape">
-			<option value="cube">Cube</option>
-			<option value="sphere">Sphere</option>
-			<option value="pyramid">Pyramid</option>
-		</select>
-		<button onclick="setShape()">Set Shape</button>
-		<br>
-		<button onclick="closeOverlay()">Return</button>
+	<div class="overlay">
+		<div class="contents">
+			<input type="number" id="height">
+			<button onclick="setHeight()">Set Height</button>
+			<br> 
+			<select id="colour" name="colour">
+				<option value="red">Red</option>
+				<option value="blue">Blue</option>
+				<option value="green">Green</option>
+			</select>
+			<button onclick="setColour()">Set Colour</button>
+			<br>
+			<select id="shape" name="shape">
+				<option value="cube">Cube</option>
+				<option value="sphere">Sphere</option>
+				<option value="pyramid">Pyramid</option>
+			</select>
+			<button onclick="setShape()">Set Shape</button>
+			<br>
+			<button onclick="closeOverlay()">Return</button>
+		</div>
 	</div>
 
 	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
