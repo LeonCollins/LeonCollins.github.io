@@ -1,6 +1,6 @@
 function setHeight() {
-	var el = document.getElementByID("POne");
-	el.object3D.position.y = document.getElementByID("height").value;
+	var el = document.getElementById("POne");
+	el.object3D.position.y = document.getElementById("height").value;
 }
 
 function openOverlay() {
