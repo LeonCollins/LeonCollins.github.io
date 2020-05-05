@@ -14,9 +14,9 @@ function setShape() {
 }
 
 function openOverlay() {
-  document.getElemenstByClassName("overlay").style.width = "100%";
+  document.getElementById("overlay").style.width = "100%";
 }
 
 function closeOverlay() {
-  document.getElementsByClassName("overlay").style.width = "0%";
+  document.getElementById("overlay").style.width = "0%";
 }
